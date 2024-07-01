@@ -9,8 +9,6 @@ public class DemoApplication {
 
 
 
-
-
 	
 	public static void main(String args[]){    
 String S11="java";//creating string by Java string literal    
