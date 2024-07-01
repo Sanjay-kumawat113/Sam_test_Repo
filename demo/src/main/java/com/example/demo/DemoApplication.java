@@ -36,15 +36,8 @@ ArrayList<String> list=new ArrayList<String>();//Creating arraylist
             System.out.println(list.get(i));     
            }  
               
-        System.out.println("Traversing list through forEach() method:");  
-        //The forEach() method is a new feature, introduced in Java 8.  
-            list.forEach(a->{ //Here, we are using lambda expression  
-                System.out.println(a);  
-              });  
-                
-            System.out.println("Traversing list through forEachRemaining() method:");  
-              Iterator<String> itr=list.iterator();  
-              itr.forEachRemaining(a-> //Here, we are using lambda expression  
+        list.forEach(System.out::println);
+        itr.forEachRemaining(System.out::println);
               {  
             System.out.println(a);  
               });  
