@@ -1,22 +1,13 @@
 package com.example.demo;
 
-import java.util.ArrayList;
-import java.util.ListIterator;
-import java.util.Iterator;
+import java.util.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class DemoApplication {
-
-
-
-
-
-
-	
-	public static void main(String args[]){    
-ArrayList<String> list=new ArrayList<String>();//Creating arraylist  
+	public static void main(String args[]){  
+    ArrayList<String> list=new ArrayList<String>();//Creating arraylist  
            list.add("Ravi");//Adding object in arraylist  
            list.add("Vijay");  
            list.add("Ravi");  
@@ -36,10 +27,23 @@ ArrayList<String> list=new ArrayList<String>();//Creating arraylist
             System.out.println(list.get(i));     
            }  
               
-        list.forEach(System.out::println);
-        itr.forEachRemaining(System.out::println);
+        System.out.println("Traversing list through forEach() method:");  
+        //The forEach() method is a new feature, introduced in Java 8.  
+            list.forEach(a->{ //Here, we are using lambda expression  
+                System.out.println(a);  
+              });  
+                
+            System.out.println("Traversing list through forEachRemaining() method:");  
+              Iterator<String> itr=list.iterator();  
+              itr.forEachRemaining(a-> //Here, we are using lambda expression  
               {  
             System.out.println(a);  
               });  
  }  
-}}    
+
+
+
+
+
+	
+}
