@@ -1,23 +1,49 @@
 package com.example.demo;
 
+import java.util.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class DemoApplication {
-
+	public static void main(String args[]){  
+    ArrayList list = new ArrayList<>(); // Creating arraylist
+           list.add("Ravi");//Adding object in arraylist  
+           list.add("Vijay");  
+           list.add("Ravi");  
+           list.add("Ajay");  
+            
+           System.out.println("Traversing list through List Iterator:");  
+           //Here, element iterates in reverse order  
+              ListIterator<String> list1=list.listIterator(list.size());  
+              while(list1.hasPrevious())  
+              {  
+                  String str=list1.previous();  
+                  System.out.println(str);  
+              }  
+        System.out.println("Traversing list through for loop:");  
+           for(int i=0;i<list.size();i++)  
+           {  
+            System.out.println(list.get(i));     
+           }  
+              
+        System.out.println("Traversing list through forEach() method:");  
+        //The forEach() method is a new feature, introduced in Java 8.  
+            list.forEach(a->{ //Here, we are using lambda expression  
+                System.out.println(a);  
+              });  
+                
+            System.out.println("Traversing list through forEachRemaining() method:");  
+              Iterator<String> itr=list.iterator();  
+              itr.forEachRemaining(a-> //Here, we are using lambda expression  
+              {  
+            System.out.println(a);  
+              });  
+ }  
 
 
 
 
 
 	
-	public static void main(String args[]){    
-String S11="java";//creating string by Java string literal    
-char ch[]={'s','t','r','i','n','g','s'};    
-String s2=new String(ch);//converting char array to string    
-String s3=new String("example");//creating Java string by new keyword    
-System.out.println(S11);    
-System.out.println(s2);    
-System.out.println(s3);    
-}}    
+}
